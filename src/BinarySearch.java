@@ -31,7 +31,10 @@ public class BinarySearch {
 		int value = 8;
 		int small = 0;
 		int large = i.length - 1;
-		binarySearch(i, value, small, large);
+		int r = binarySearch(i, value, small, large);
+		if (r != -1) {
+			System.out.println("找到匹配值:" + "r=" + r + ",i[r]=" + i[r]);
+		} 
 	}
 
 	/**
@@ -56,7 +59,7 @@ public class BinarySearch {
 		if (small > large) {
 			System.out.println("small=" + small + ";large=" + large);
 			System.out.println("没找到匹配值！！！");
-			return middle;
+			return -1; //给一个找不到的返回标志
 		}
 
 		// 指针在范围以内，找到匹配值
