@@ -1,3 +1,4 @@
+package com.gzh.util;
 /**
  * 交换数据工具类
  * 

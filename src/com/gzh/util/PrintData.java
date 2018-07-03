@@ -1,3 +1,4 @@
+package com.gzh.util;
 /**
  * 打印数据工具类
  * @author gzh-t184
