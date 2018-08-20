@@ -5,7 +5,7 @@ import com.gzh.util.PrintData;
 /**
  * 
  * <pre>
- * buddle sort
+ * bubble sort
  * &#64;author gongzhihao
  * &#64;date 2018年8月20日 下午11:07:43
  * </pre>
