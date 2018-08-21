@@ -7,6 +7,11 @@ import com.gzh.util.SwapData;
  * 
  * <pre>
  * bubble sort
+ * 
+ * 1.compare data
+ * 2.swap data
+ * 3.pointer j scan, 10 times
+ * every time, the smallest value to the left. and,the left data already have been sorted.
  * &#64;author gongzhihao
  * &#64;date 2018年8月20日 下午11:07:43
  * </pre>
@@ -24,10 +29,10 @@ public class BubbleSort {
 		System.out.println("---sort data---");
 		SwapData swapData = new SwapData();
 		for (int i = 0; i < a.length; i++) {
-			for (int j = i + 1; j < a.length; j++) { //j pointer scan
-				// compare data
+			for (int j = i + 1; j < a.length; j++) { //3.j pointer scan
+				// 1.compare data
 				if (a[j] < a[i]) { 
-					// swap data
+					// 2.swap data
 					swapData.swapData(a, i, j);
 				}
 			}

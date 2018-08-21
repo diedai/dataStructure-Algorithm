@@ -14,7 +14,7 @@ import com.gzh.util.SwapData;
  * @author gzh
  *
  */
-public class SelectOrder {
+public class SelectOrder2 {
 	static PrintData printData = new PrintData();
 
 	public static void main(String[] args) {
@@ -41,10 +41,10 @@ public class SelectOrder {
 	public static void selectOrder(int[] a) {
 		SwapData swapData = new SwapData();
 		
-		for (int i = 0; i < a.length; i++) { //每一趟
-			int temp = i; //都有一个临时值，用于保存最小值
+		for (int i = 0; i < a.length; i++) { 
+			int temp = i; 
 			for (int j = i+1; j < a.length; j++) {
-				if (a[j]<a[i]) {
+				if (a[j]<a[i]) { //pointer j scan data, until find the small value //每一趟比较数据的过程当中，并没有交换数据，所以速度快就快在这里。即每一趟只需要交换1次数据，就是最小值和i交换。比较数据的次数还是和冒泡一样的，每一趟是N次。
 					temp = j;
 				}
 			}
