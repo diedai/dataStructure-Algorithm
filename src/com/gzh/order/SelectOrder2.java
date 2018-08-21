@@ -3,22 +3,36 @@ package com.gzh.order;
 import com.gzh.util.PrintData;
 import com.gzh.util.SwapData;
 
+
 /**
- * 选择排序
- * 1.冒泡排序
- * 每一趟，把最大的放到最右边。
- * 每一趟，比较N次，交换N次。
- * 2.选择排序
- * 每一趟，把最小的放到最左边。
- * 每一趟，比较N次，只交换一次。把最小的和最左边的交换。速度的区别也在于交换次数，其他的都一样，他们的速度都是N~2，因为有2个for循环，但是选择排序由于交换次数少一点所以快一点。
- * @author gzh
- *
+ * 
+ * <pre>
+ * 
+ * ---print data---
+ * ---before sort---
+10 9 8 7 6 5 4 3 2 1 
+---sort---
+1 9 8 7 6 5 4 3 2 10 
+1 2 8 7 6 5 4 3 9 10 
+1 2 3 7 6 5 4 8 9 10 
+1 2 3 4 6 5 7 8 9 10 
+1 2 3 4 5 6 7 8 9 10 
+1 2 3 4 5 6 7 8 9 10 
+1 2 3 4 5 6 7 8 9 10 
+1 2 3 4 5 6 7 8 9 10 
+1 2 3 4 5 6 7 8 9 10 
+1 2 3 4 5 6 7 8 9 10 
+---after sort---
+1 2 3 4 5 6 7 8 9 10 
+
+ * @author gongzhihao
+ * @date 2018年8月21日 下午2:08:50
+ * </pre>
  */
 public class SelectOrder2 {
 	static PrintData printData = new PrintData();
 
 	public static void main(String[] args) {
-		//有一个数组
 		int[] a = {10,9,8,7,6,5,4,3,2,1};
 		
 		//before sort
@@ -27,7 +41,7 @@ public class SelectOrder2 {
 		
 		//sort
 		System.out.println("---sort---");
-		selectOrder(a); //排序方法只需要排序，不需要返回数据，因为传参数组是引用，所以当排序方法完成之后数组的值已经被排序。
+		selectOrder(a); 
 		
 		//after
 		System.out.println("---after sort---");
@@ -48,7 +62,7 @@ public class SelectOrder2 {
 					temp = j;
 				}
 			}
-			swapData.swapData(a,i,temp); //每一趟比较完毕之后，把最小值放到最左边
+			swapData.swapData(a,i,temp); 
 			
 			printData.printArray(a);
 		}
