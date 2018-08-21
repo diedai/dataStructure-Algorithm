@@ -24,16 +24,16 @@ public class BubbleSort {
 		System.out.println("---sort data---");
 		SwapData swapData = new SwapData();
 		for (int i = 0; i < a.length; i++) {
-			for (int j = i + 1; j < a.length; j++) {
+			for (int j = i + 1; j < a.length; j++) { //j pointer scan
 				// compare data
-				if (a[j] < a[i]) {
+				if (a[j] < a[i]) { 
 					// swap data
 					swapData.swapData(a, i, j);
 				}
 			}
 			
 			// print data after sort
-			printData.printArray(a);
+			printData.printArray(a); //the smallest value to the left
 		}
 
 		// print data after sort
