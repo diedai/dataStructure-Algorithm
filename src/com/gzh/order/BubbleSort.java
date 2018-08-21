@@ -1,6 +1,7 @@
 package com.gzh.order;
 
 import com.gzh.util.PrintData;
+import com.gzh.util.SwapData;
 
 /**
  * 
@@ -15,23 +16,28 @@ public class BubbleSort {
 
 	public static void main(String[] args) {
 		// print data before sort
+		System.out.println("---before sort---");
 		PrintData printData = new PrintData();
 		printData.printArray(a);
 
 		//sort
+		System.out.println("---sort data---");
+		SwapData swapData = new SwapData();
 		for (int i = 0; i < a.length; i++) {
 			for (int j = i + 1; j < a.length; j++) {
 				// compare data
 				if (a[j] < a[i]) {
 					// swap data
-					int temp = a[i];
-					a[i] = a[j];
-					a[j] = temp;
+					swapData.swapData(a, i, j);
 				}
 			}
+			
+			// print data after sort
+			printData.printArray(a);
 		}
 
 		// print data after sort
+		System.out.println("---after sort---");
 		printData.printArray(a);
 
 	}
