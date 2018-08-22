@@ -56,13 +56,22 @@ public class InsertOrder {
 	 * </pre>
 	 */
 	public static void insertOrder(int[] a) {
-		for (int i = 1; i < a.length; i++) {
-			int j = i;
+		int i,j;
+		for ( i= 1; i < a.length; i++) {
 			int temp = a[i]; // 标志数据
-			while (j > 0 && a[j - 1] > temp) { // 把局部有序数据和标志数据进行比较，右移大的数据
+			
+			//方法1，使用while循环
+//			int j = i;
+//			while (j > 0 && a[j - 1] > temp) { // 把局部有序数据和标志数据进行比较，右移大的数据
+//				a[j] = a[j - 1];
+//				j--;
+//			}
+			
+			//方法2，使用for循环
+			for (j = i; j > 0 && a[j - 1] > temp; j--) {
 				a[j] = a[j - 1];
-				j--;
 			}
+			
 			a[j] = temp; // 右移完成之后，插入标志数据到合适位置。注：这里没有明显的交换数据，但实际上，也隐式的包含了交换数据。
 
 			printData.printArray(a);

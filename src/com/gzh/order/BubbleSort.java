@@ -50,8 +50,10 @@ public class BubbleSort {
 		//sort
 		System.out.println("---sort data---");
 		SwapData swapData = new SwapData();
-		for (int i = 0; i < a.length; i++) {
-			for (int j = i + 1; j < a.length; j++) { //3.j pointer scan
+		
+		int i,j;
+		for (i = 0; i < a.length; i++) {
+			for (j= i + 1; j < a.length; j++) { //3.j pointer scan
 				// 1.compare data
 				if (a[j] < a[i]) { 
 					// 2.swap data
