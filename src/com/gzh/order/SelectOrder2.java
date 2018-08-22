@@ -55,8 +55,27 @@ public class SelectOrder2 {
 	}
 	
 	/**
-	 * 选择排序
-	 * @param a 待排序数组
+	 * 
+	 * <pre>
+	 * select sort
+	 * 
+	 * ---步骤---
+	 * 和冒泡一样
+	 * 1.比较数据
+	 * 2.交换数据
+	 * 
+	 * ---区别---
+	 * 1.冒泡
+	 * 每趟每次都要交换数据。
+	 * 2.选择
+	 * 每趟只交换一次数据。实际上，这里是选择比冒泡快的唯一原因，也是算法之所以被优化的唯一原因。
+	 * 
+	 * 这是唯一的区别。其他都一样。
+	 * 
+	 * @author gzh
+	 * @date 2018年8月22日 上午8:22:14
+	 * @param a
+	 * </pre>
 	 */
 	public static void selectOrder(int[] a) {
 		SwapData swapData = new SwapData();
@@ -64,11 +83,13 @@ public class SelectOrder2 {
 		for (int i = 0; i < a.length; i++) { 
 			int temp = i; 
 			for (int j = i+1; j < a.length; j++) {
-				if (a[j]<a[i]) { //pointer j scan data, until find the small value //每一趟比较数据的过程当中，并没有交换数据，所以速度快就快在这里。即每一趟只需要交换1次数据，就是最小值和i交换。比较数据的次数还是和冒泡一样的，每一趟是N次。
-					temp = j;
+				//1.compare data
+				if (a[j]<a[i]) { //pointer j scan data, until find the small value //每一趟比较数据的过程当中，并没有交换数据，所以速度快就快在这里。即每一趟只需要交换1次数据，就是最小值和i交换。比较数据的次数还是和冒泡一样的，每一趟是N次。 //其他的和冒泡完全一样。
+					temp = j; //这里没有交换数据，而是赋值。交换数据要等到每一趟结束之后( find the smallest value)，再交换。
 				}
 			}
-			swapData.swapData(a,i,temp); 
+			//2.swap data
+			swapData.swapData(a,i,temp); //最小值和i交换
 			
 			printData.printArray(a);
 		}

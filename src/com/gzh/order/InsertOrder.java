@@ -27,26 +27,22 @@ import com.gzh.util.PrintData;
  * </pre>
  */
 public class InsertOrder {
+	static PrintData printData = new PrintData();
 
 	public static void main(String[] args) {
 		int[] a = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
 		// before sort
 		System.out.println("---before sort---");
-		for (int j = 0; j < a.length; j++) {
-			System.out.print(a[j] + " ");
-		}
-		System.out.println();
+		printData.printArray(a);
 
 		// sort
 		System.out.println("---sort---");
-		insertOrder(a); // 排序方法只需要排序，不需要返回数据，因为传参数组是引用，所以当排序方法完成之后数组的值已经被排序。
+		insertOrder(a); 
 
 		// after sort
 		System.out.println("---after sort---");
-		for (int j = 0; j < a.length; j++) {
-			System.out.print(a[j] + " ");
-		}
+		printData.printArray(a);
 	}
 
 	
@@ -54,36 +50,20 @@ public class InsertOrder {
 	 * 
 	 * <pre>
 	 * insert sort
-	 * 
-	 * ---步骤---
-	 * 1.比较数据
-	 * 2.交换数据
-	 * 3.每一趟，指针去扫码数据
-	 * 
-	 * 步骤和冒泡排序差不多，可以说是完全一样。
-	 * 
-	 * ---区别---
-	 * 一、插入
-	 * 
-	 * 二、冒泡
-	 * 
-	 * 
 	 * @author gzh
 	 * @date 2018年8月21日 上午9:59:36
 	 * @param a
 	 * </pre>
 	 */
 	public static void insertOrder(int[] a) {
-		PrintData printData = new PrintData();
-
-		for (int out = 1; out < a.length; out++) {
-			int in = out;
-			int temp = a[out]; // 标志数据
-			while (in > 0 && a[in - 1] > temp) { // 把局部有序数据和标志数据进行比较，右移大的数据
-				a[in] = a[in - 1];
-				in--;
+		for (int i = 1; i < a.length; i++) {
+			int j = i;
+			int temp = a[i]; // 标志数据
+			while (j > 0 && a[j - 1] > temp) { // 把局部有序数据和标志数据进行比较，右移大的数据
+				a[j] = a[j - 1];
+				j--;
 			}
-			a[in] = temp; // 右移完成之后，插入标志数据到合适位置。注：这里没有明显的交换数据，但实际上，也隐式的包含了交换数据。
+			a[j] = temp; // 右移完成之后，插入标志数据到合适位置。注：这里没有明显的交换数据，但实际上，也隐式的包含了交换数据。
 
 			printData.printArray(a);
 		}
