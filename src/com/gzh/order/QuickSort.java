@@ -49,6 +49,7 @@ public class QuickSort {
 		//partition(0, a.length-1);
 		
 		//排序
+		System.out.println("before sort");
 		printData.printArray(a);
 		quickSort(0,a.length-1);
 
@@ -131,16 +132,18 @@ public class QuickSort {
 	 * @date 2018年10月5日 上午12:54:24
 	 * @param left
 	 * @param right
-	 * @return
+	 * @return ?
 	 * </pre>
 	 */
 	private static int partitionSort(int left, int right) { //参数
+		System.out.println("---本次划分开始---");
+		System.out.println("划分范围的索引是：left=" + left + "~" + "right=" + right);
 		SwapData swapData = new SwapData();
 		
 		// 排序数据
 		int leftP = left - 1, rightP = right; //扫描指针 //以最右边数据为基准值进行划分，最右边数据不参与划分算法；但是在划分算法while循环完毕之后，需要交换数据(最右边数据索引和左边指针索引)，目的是把基准值放到左右子数组的中间。
 		int pivot = a[right]; //基准值
-		System.out.println("基准值索引是：" + right + "基准值是：" + pivot);
+		System.out.println("基准值是a[" + right + "]=" + a[right]);
 		while (true) {
 			// 从最左边开始遍历数据，直到找到一个比基准值大的数据
 			while (leftP < right && a[++leftP] < pivot) {
@@ -156,14 +159,20 @@ public class QuickSort {
 				break;
 			} else {
 				// 交换数据。交换大的数据和小的数据，把它们放到基准值的右边和左边
+				System.out.println("左边比基准值大的数据是a[" + leftP + "]=" + a[leftP]);
+				System.out.println("右边比基准值小的数据是a[" + rightP + "]=" + a[rightP]);
 				swapData.swapData(a, leftP, rightP);
 
 				printData.printArray(a);
 			}
 		}
 		
+		System.out.println("当前划分结束：leftP=" + leftP + ",rightP=" + rightP);
+		System.out.println("最后一步，把左指针的值和基准值进行交换，实际上是把右边数据的第一个数据和基准值进行交换——最终，基准值的左边数据比基准值都小(但是是无序)，基准值右边的数据比基准值都大(但是是无序)");
 		swapData.swapData(a,leftP,right);
 		printData.printArray(a);
+		System.out.println("---本次划分结束---");
+		System.out.println();
 		return leftP;
 
 	}
