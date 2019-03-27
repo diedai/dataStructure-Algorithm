@@ -127,9 +127,9 @@ public class Tree {
 	 * </pre>
 	 */
 	public void iterate(Node p) {
-		if (p != null) {
+		if (p != null) { //结束的标志
 			iterate(p.leftChild);
-			System.out.println(p.value);
+			System.out.println(p.value); //输出的顺组在第几个
 			iterate(p.rightChild);
 		}
 	}
