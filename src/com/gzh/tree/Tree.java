@@ -129,7 +129,7 @@ public class Tree {
 	public void iterate(Node p) {
 		if (p != null) { //结束的标志
 			iterate(p.leftChild);
-			System.out.println(p.value); //输出的顺组在第几个
+			System.out.println(p.value); //输出的顺序在第几个
 			iterate(p.rightChild);
 		}
 	}
